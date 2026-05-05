@@ -1,14 +1,17 @@
 [
   {
-    "task": "Extract AWS S3 bucket names from CloudFormation template resource names that follow the pattern 'MyBucketXXXXX'",
-    "format": "regex"
+    "task": "Extract the AWS region from an S3 bucket URI. Given a string like 's3://my-bucket-us-east-1/path/to/file.txt', extract just the region code.",
+    "format": "regex",
+    "solution_criteria": "A regex pattern that captures the region identifier (e.g., 'us-east-1', 'eu-west-1') from S3 bucket URIs and paths. Should work with various AWS region formats."
   },
   {
-    "task": "Parse an AWS IAM policy JSON and return a list of all allowed actions",
-    "format": "python"
+    "task": "Parse an AWS CloudWatch log entry and extract the timestamp, log level, and message. The log format is: '[TIMESTAMP] [LEVEL] message text here'",
+    "format": "python",
+    "solution_criteria": "A Python function that takes a log string and returns a dictionary with 'timestamp', 'level', and 'message' keys. Should handle various timestamp formats and log levels (INFO, ERROR, WARNING, DEBUG)."
   },
   {
-    "task": "Create a minimal AWS Lambda execution role policy document that allows CloudWatch Logs permissions",
-    "format": "json"
+    "task": "Create a JSON configuration object for an AWS Lambda function that includes the function name, runtime, handler, timeout, and memory allocation.",
+    "format": "json",
+    "solution_criteria": "A valid JSON object with required Lambda configuration properties including functionName, runtime (e.g., 'python3.11'), handler (e.g., 'index.handler'), timeoutSeconds, and memoryMB. Should follow AWS Lambda naming conventions."
   }
 ]
