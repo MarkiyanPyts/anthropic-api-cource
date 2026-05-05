@@ -1,17 +1,17 @@
 [
   {
-    "task": "Extract the AWS region from an S3 bucket URI. Given a string like 's3://my-bucket-us-east-1/path/to/file.txt', extract just the region code.",
-    "format": "regex",
-    "solution_criteria": "A regex pattern that captures the region identifier (e.g., 'us-east-1', 'eu-west-1') from S3 bucket URIs and paths. Should work with various AWS region formats."
-  },
-  {
-    "task": "Parse an AWS CloudWatch log entry and extract the timestamp, log level, and message. The log format is: '[TIMESTAMP] [LEVEL] message text here'",
+    "task": "Write a Python function that extracts the AWS region from an S3 bucket ARN string. The function should take an ARN like 'arn:aws:s3:::my-bucket' or 'arn:aws:s3:us-west-2:123456789012:bucket/my-bucket' and return the region code if present, or 'us-east-1' as default if not specified.",
     "format": "python",
-    "solution_criteria": "A Python function that takes a log string and returns a dictionary with 'timestamp', 'level', and 'message' keys. Should handle various timestamp formats and log levels (INFO, ERROR, WARNING, DEBUG)."
+    "solution_criteria": "Function should handle both S3 path-style and virtual-hosted-style ARNs, correctly extract region from the ARN format, and return 'us-east-1' when no region is explicitly specified in the ARN."
   },
   {
-    "task": "Create a JSON configuration object for an AWS Lambda function that includes the function name, runtime, handler, timeout, and memory allocation.",
+    "task": "Create a JSON configuration object for an AWS Lambda function that processes S3 events. The configuration should include a function name 'ProcessS3Events', a timeout of 60 seconds, memory of 512 MB, runtime of 'python3.11', and environment variables for an S3 bucket name 'my-data-bucket' and a DynamoDB table name 'ProcessedItems'.",
     "format": "json",
-    "solution_criteria": "A valid JSON object with required Lambda configuration properties including functionName, runtime (e.g., 'python3.11'), handler (e.g., 'index.handler'), timeoutSeconds, and memoryMB. Should follow AWS Lambda naming conventions."
+    "solution_criteria": "JSON object should have proper structure with function metadata, timeout and memory settings, runtime specification, and environment variables properly nested and formatted."
+  },
+  {
+    "task": "Write a regular expression in Python that validates and extracts AWS IAM role names from a given text. IAM role names must start with a letter or underscore, contain only alphanumeric characters, underscores, and hyphens, and be between 1 and 64 characters long. The regex should match the valid role name pattern.",
+    "format": "regex",
+    "solution_criteria": "Regex pattern should correctly validate IAM role naming conventions (alphanumeric, underscore, hyphen only), enforce length constraints of 1-64 characters, and require starting with letter or underscore."
   }
 ]
