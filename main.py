@@ -1,6 +1,2 @@
-def main():
-    print("Hello from anthropic-api-cource!")
-
-
-if __name__ == "__main__":
-    main()
+def greeting():
+    return "Hello, welcome to the Anthropic API course!"
