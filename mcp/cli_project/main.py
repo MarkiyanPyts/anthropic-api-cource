@@ -28,7 +28,7 @@ async def main():
 
     server_scripts = sys.argv[1:]
     clients = {}
-
+    print(server_scripts)
     command, args = (
         ("uv", ["run", "mcp_server.py"])
         if os.getenv("USE_UV", "0") == "1"
