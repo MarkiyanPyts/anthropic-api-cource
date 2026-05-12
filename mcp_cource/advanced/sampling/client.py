@@ -29,6 +29,7 @@ async def chat(input_messages: list[SamplingMessage], max_tokens=4000):
                 else str(msg.content)
             )
             messages.append({"role": "user", "content": content})
+        elif msg.role == "assistant" and msg.content.type == "text":
             content = (
                 msg.content.text
                 if hasattr(msg.content, "text")
