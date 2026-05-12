@@ -14,3 +14,8 @@ dependencies = [
 dev = [
     "ipykernel>=7.2.0",
 ]
+
+[tool.uv.workspace]
+members = [
+    "mcp_cource/advanced/sampling",
+]

@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: sampling
+Version: 0.1.0
+Summary: Demonstration of sampling with MCP
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: aioconsole>=0.8.1
+Requires-Dist: anthropic>=0.53.0
+Requires-Dist: mcp[cli]>=1.9.3
+
+# MCP Logging and Progress Demo
+
+A demonstration of the Model Context Protocol using a STDIO transport.
+
+## Setup
+
+Install dependencies using uv:
+
+```bash
+uv sync
+```
+
+## Running the Project
+
+Run the MCP client:
+
+```bash
+uv run client.py
+```
