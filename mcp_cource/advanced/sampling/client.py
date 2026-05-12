@@ -9,6 +9,9 @@ from mcp.types import (
     TextContent,
     SamplingMessage,
 )
+from dotenv import load_dotenv
+
+load_dotenv()
 
 anthropic_client = AsyncAnthropic()
 model = "claude-sonnet-4-5"
@@ -69,7 +72,7 @@ async def run():
 
             result = await session.call_tool(
                 name="summarize",
-                arguments={"text_to_summarize": "lots of text"},
+                arguments={"text_to_summarize": "It's an article about the benefits of using MCP. when asked to suymmarize, it should call the summarize tool defined in server.py which in turn calls the chat function defined above."},
             )
             print(result.content)
 
