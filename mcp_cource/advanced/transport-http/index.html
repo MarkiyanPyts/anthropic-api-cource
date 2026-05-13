@@ -746,12 +746,12 @@
           id || "Not yet available";
 
         // Enable buttons after initialization
-        // if (id) {
         document.getElementById("initialized-button").disabled = false;
         document.getElementById("tool-button").disabled = false;
         document.getElementById("custom-button").disabled = false;
-        // document.getElementById("sse-start-button").disabled = false;
-        // }
+        if (id) {
+          document.getElementById("sse-start-button").disabled = false;
+        }
       }
 
       // Add SSE message to panel (for GET SSE)

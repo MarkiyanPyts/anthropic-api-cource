@@ -8,8 +8,8 @@ from mcp.server.fastmcp import FastMCP, Context
 
 mcp = FastMCP(
     "mcp-server",
-    stateless_http=True,
-    json_response=True,
+    # stateless_http=True,
+    # json_response=True,
 )
 
 
