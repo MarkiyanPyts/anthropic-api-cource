@@ -1,6 +1,8 @@
 import asyncio
+import uvicorn
 from starlette.requests import Request
 from starlette.responses import Response
+from starlette.middleware.cors import CORSMiddleware
 from mcp.server.fastmcp import FastMCP, Context
 
 
@@ -28,4 +30,13 @@ async def get(request: Request) -> Response:
     return Response(content=html_content, media_type="text/html")
 
 
-mcp.run(transport="streamable-http")
+app = mcp.streamable_http_app()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["Mcp-Session-Id"],
+)
+
+uvicorn.run(app, host="127.0.0.1", port=8000)
