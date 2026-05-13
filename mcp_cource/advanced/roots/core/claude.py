@@ -26,8 +26,7 @@ class Claude:
         messages.append(assistant_message)
 
     def text_from_message(self, message: Message):
-        return "
-".join(
+        return "".join(
             [block.text for block in message.content if block.type == "text"]
         )
 
